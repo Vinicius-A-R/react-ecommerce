@@ -1,12 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import { Container, Content } from './styles';
 
-export default function MenuItem({ id, title, imageUrl, sizeImage, linkUrl }) {
+function MenuItem({ id, title, imageUrl, size, linkUrl, history, match }) {
+  console.log(match);
+
   return (
     <>
-      <Container className={sizeImage} image={imageUrl}>
-        <Content>
+      <Container className={size} image={imageUrl}>
+        <Content onClick={() => history.push(`${match.url}${linkUrl}`)}>
           <span>{title.toUpperCase()}</span>
           <span>SHOP NOW</span>
         </Content>
@@ -14,3 +17,5 @@ export default function MenuItem({ id, title, imageUrl, sizeImage, linkUrl }) {
     </>
   );
 }
+
+export default withRouter(MenuItem);

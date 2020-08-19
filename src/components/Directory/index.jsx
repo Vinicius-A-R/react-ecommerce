@@ -44,18 +44,9 @@ function Directory() {
 
   return (
     <Container>
-      {sections.map(({ id, title, imageUrl, size, linkUrl }) => (
-        <GridOrder>
-          <MenuItem
-            key={id}
-            className={`number${id}`}
-            id={id}
-            title={title}
-            imageUrl={imageUrl}
-            size={size}
-            linkUrl={linkUrl}
-            sizeImage={size}
-          />
+      {sections.map(({ id, ...otherProps }) => (
+        <GridOrder key={id}>
+          <MenuItem key={id} {...otherProps} />
         </GridOrder>
       ))}
     </Container>
