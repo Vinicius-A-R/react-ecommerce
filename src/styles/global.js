@@ -11,7 +11,7 @@ export default createGlobalStyle`
 html, body, #root {
   font-family: 'Open Sans Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
-  /* -moz-osx-font-smoothing: grayscale; */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body{
@@ -22,6 +22,11 @@ button{
   cursor: pointer;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 16px;
+}
+
+a{
+  color: #222;
+  text-decoration: none;
 }
 `;
 
