@@ -2,11 +2,29 @@ import React from 'react';
 
 import { ButtonStyle } from './styles';
 
-function Button({ labelButton, typeButton, colorButton }) {
+function Button({
+  labelButton,
+  typeButton,
+  colorButton,
+  signIn,
+  isGoogleSignIn,
+}) {
   return (
-    <ButtonStyle type={typeButton} color={colorButton}>
-      {labelButton}
-    </ButtonStyle>
+    <>
+      {isGoogleSignIn ? (
+        <ButtonStyle
+          type={typeButton}
+          color={colorButton}
+          onClick={() => signIn()}
+        >
+          {labelButton}
+        </ButtonStyle>
+      ) : (
+        <ButtonStyle type={typeButton} color={colorButton}>
+          {labelButton}
+        </ButtonStyle>
+      )}
+    </>
   );
 }
 

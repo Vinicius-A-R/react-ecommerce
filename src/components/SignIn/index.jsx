@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { signInWithGoogle } from '../../firebase/firebase-utils';
 
 import InputMaterialize from '../InputMaterialize/';
 import Button from '../Button/';
@@ -8,6 +9,7 @@ import { Container, Form, GridButton } from './styles';
 function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLogged, setIsLogged] = useState(false);
 
   const [labelInput, setLabelInput] = useState(false);
 
@@ -36,7 +38,6 @@ function SignIn() {
             typeInput="email"
             valueInput={email}
             handleInput={handleEmail}
-            isRequired={true}
             isAutoFocus={true}
           />
 
@@ -45,7 +46,6 @@ function SignIn() {
             typeInput="password"
             valueInput={password}
             handleInput={handlePassword}
-            isRequired={true}
             isAutoFocus={false}
           />
 
@@ -57,9 +57,11 @@ function SignIn() {
             />
 
             <Button
-              typeButton="submit"
+              typeButton="button"
               labelButton="Sign in with Google"
               colorButton={'#14AFE5'}
+              signIn={signInWithGoogle}
+              isGoogleSignIn
             />
           </GridButton>
         </Form>

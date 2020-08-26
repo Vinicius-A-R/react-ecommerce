@@ -7,10 +7,10 @@ import Sign from './pages/Sign/';
 
 import Header from './components/Header/';
 
-function routes() {
+function routes({ currentUser }) {
   return (
     <BrowserRouter>
-      <Header />
+      <Header user={currentUser} />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/shop" component={Shop} />

@@ -31,6 +31,8 @@ export const Item = styled.div`
   width: 64px;
   padding: 8px 4px;
 
+  cursor: pointer;
+
   &:hover {
     border: 1px solid #222;
   }
