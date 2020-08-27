@@ -5,6 +5,7 @@ import { Container } from './styles';
 function InputMaterialize({
   labelInput,
   typeInput,
+  nameInput,
   valueInput,
   handleInput,
   isRequired,
@@ -13,16 +14,16 @@ function InputMaterialize({
   return (
     <Container>
       <input
-        id={typeInput}
+        id={nameInput}
         type={typeInput}
-        name={typeInput}
+        name={nameInput}
         value={valueInput}
         onChange={handleInput}
         required={isRequired}
         autoFocus={isAutoFocus}
       />
 
-      <label htmlFor={typeInput}>{labelInput}</label>
+      <label htmlFor={nameInput}>{labelInput}</label>
     </Container>
   );
 }

@@ -4,7 +4,7 @@ import { signInWithGoogle } from '../../firebase/firebase-utils';
 import InputMaterialize from '../InputMaterialize/';
 import Button from '../Button/';
 
-import { Container, Form, GridButton } from './styles';
+import { Container, Form, Header, GridButton } from './styles';
 
 function SignIn() {
   const [email, setEmail] = useState('');
@@ -29,10 +29,12 @@ function SignIn() {
   return (
     <>
       <Container>
-        <h2>I already have an account</h2>
-        <span>Sign in with your email and password</span>
-
         <Form onSubmit={handleSubmit}>
+          <Header>
+            <h2>I already have an account</h2>
+            <span>Sign in with your email and password</span>
+          </Header>
+
           <InputMaterialize
             labelInput="E-Mail"
             typeInput="email"

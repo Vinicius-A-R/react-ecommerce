@@ -7,18 +7,9 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { Container, Item } from './styles';
 
 function Header({ user }) {
-  const [isLogged, setIsLogged] = useState(false);
+  // const [isLogged, setIsLogged] = useState(false);
 
-  useEffect(() => {
-    console.log('kkkkkkkkkkkkkkk');
-    console.log(user);
-  }, [user]);
-
-  const signOut = () => {
-    auth.signOut();
-    setIsLogged(false);
-  };
-
+  // console.log(user);
   return (
     <>
       <Container>
@@ -34,9 +25,7 @@ function Header({ user }) {
           </Item>
 
           {user ? (
-            <Item onClick={() => auth.signOut()}>
-              <Link to="/">SIGN OUT</Link>
-            </Item>
+            <Item onClick={() => auth.signOut()}>SIGN OUT</Item>
           ) : (
             <Item>
               <Link to="/signin">SIGN IN</Link>

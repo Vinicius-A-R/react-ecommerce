@@ -1,24 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { auth } from './firebase/firebase-utils';
+import { auth, createUserProfileDocument } from './firebase/firebase-utils';
 
 import Routes from './routes';
 
 import GlobalStyle from './styles/global';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const authUser = async () => {
+    await auth.onAuthStateChanged(async (authUser) => {
+      if (authUser) {
+        const userRef = await createUserProfileDocument(authUser);
+
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      }
+
+      setCurrentUser(authUser);
+    });
+  };
 
   useEffect(() => {
-    const isLogged = async () => {
-      await auth.onAuthStateChanged((user) => {
-        setCurrentUser(user);
-      });
-    };
-
-    isLogged();
+    authUser();
 
     return () => {
-      isLogged();
+      authUser();
     };
   }, []);
 
