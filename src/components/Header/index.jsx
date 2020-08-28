@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase-utils';
 
-import { ReactComponent as Logo } from '../../assets/crown.svg';
+import { useSelector } from 'react-redux';
 
+import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { Container, Item } from './styles';
 
-function Header({ user }) {
-  // const [isLogged, setIsLogged] = useState(false);
+function Header() {
+  const { currentUser } = useSelector((state) => state.user);
 
-  // console.log(user);
+  // console.log(currentUser);
+
   return (
     <>
       <Container>
@@ -24,7 +26,7 @@ function Header({ user }) {
             <Link to="/contact">CONTACT</Link>
           </Item>
 
-          {user ? (
+          {currentUser ? (
             <Item onClick={() => auth.signOut()}>SIGN OUT</Item>
           ) : (
             <Item>

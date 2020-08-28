@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { signInWithGoogle } from '../../firebase/firebase-utils';
+import { auth, signInWithGoogle } from '../../firebase/firebase-utils';
 
 import InputMaterialize from '../InputMaterialize/';
 import Button from '../Button/';
@@ -9,21 +9,30 @@ import { Container, Form, Header, GridButton } from './styles';
 function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLogged, setIsLogged] = useState(false);
 
-  const [labelInput, setLabelInput] = useState(false);
+  const setDefault = () => {
+    setEmail('');
+    setPassword('');
+  };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+
+      setDefault();
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
-  const handleEmail = (event) => {
-    setLabelInput(true);
-    setEmail(event.target.value);
-  };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  const handlePassword = (event) => {
-    setPassword(event.target.value);
+    if (name === 'email-signin') setEmail(value);
+
+    if (name === 'password-signin') setPassword(value);
   };
 
   return (
@@ -38,16 +47,18 @@ function SignIn() {
           <InputMaterialize
             labelInput="E-Mail"
             typeInput="email"
+            nameInput="email-signin"
             valueInput={email}
-            handleInput={handleEmail}
+            handleInput={handleChange}
             isAutoFocus={true}
           />
 
           <InputMaterialize
             labelInput="Password"
             typeInput="password"
+            nameInput="password-signin"
             valueInput={password}
-            handleInput={handlePassword}
+            handleInput={handleChange}
             isAutoFocus={false}
           />
 
