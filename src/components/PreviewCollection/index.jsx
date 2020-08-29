@@ -12,8 +12,8 @@ function PreviewCollection({ title, routeName, items }) {
         <Grid>
           {items
             .filter((item, index) => index < 4)
-            .map(({ id, ...otherProps }) => {
-              return <CollectionItem key={id} {...otherProps} />;
+            .map((item) => {
+              return <CollectionItem key={item.id} item={item} />;
             })}
         </Grid>
       </Container>
