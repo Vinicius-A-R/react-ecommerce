@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  position: relative;
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,6 +29,7 @@ export const Container = styled.header`
 export const Item = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 
   width: 64px;
   padding: 8px 4px;

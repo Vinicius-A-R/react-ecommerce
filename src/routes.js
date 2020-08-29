@@ -10,12 +10,6 @@ import Sign from './pages/Sign/';
 import Header from './components/Header/';
 
 function routes({ currentUser }) {
-  // const useCurrentUser = () => {
-  //   return currentUser;
-  // };
-
-  console.log(currentUser);
-
   return (
     <BrowserRouter>
       <Header />
