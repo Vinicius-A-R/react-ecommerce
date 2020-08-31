@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  h2 {
-    font-weight: 300;
+  h3 {
+    font-size: 24px;
+    font-weight: 400;
   }
 
   &:not(:first-child) {

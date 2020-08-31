@@ -8,7 +8,7 @@ function PreviewCollection({ title, routeName, items }) {
   return (
     <>
       <Container>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <Grid>
           {items
             .filter((item, index) => index < 4)

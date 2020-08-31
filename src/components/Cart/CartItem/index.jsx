@@ -11,7 +11,7 @@ function CartItem({ name, imageUrl, price, quantity }) {
         <h4>{name}</h4>
         <span>quantity: {quantity}</span>
         <span>
-          {quantity} x ${price}
+          {quantity} x $&nbsp;{price}
         </span>
       </Details>
     </Container>

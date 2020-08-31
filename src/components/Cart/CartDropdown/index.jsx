@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+
 import { useSelector } from 'react-redux';
+// import { addItem } from '../../../redux/cart/cart-actions';
 
 import Button from '../../Button/';
-
 import CartItem from '../CartItem/';
 
 import { Container, Items } from './styles';
 
-function CartDropdown() {
-  const { cartItems } = useSelector((state) => state.cart);
-
-  console.log('cartItem', cartItems);
+function CartDropdown({ cartItems }) {
   return (
     <>
       <Container>
