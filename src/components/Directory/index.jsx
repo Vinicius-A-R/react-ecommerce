@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import MenuItem from '../MenuItem/';
 
@@ -40,11 +40,11 @@ const sectionsInfo = [
 ];
 
 function Directory() {
-  const [sections, setItems] = useState(sectionsInfo);
+  // const [sections, setItems] = useState(sectionsInfo);
 
   return (
     <Container>
-      {sections.map(({ id, ...otherProps }) => (
+      {sectionsInfo.map(({ id, ...otherProps }) => (
         <GridOrder key={id}>
           <MenuItem key={id} {...otherProps} />
         </GridOrder>

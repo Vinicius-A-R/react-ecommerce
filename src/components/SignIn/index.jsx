@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { auth, signInWithGoogle } from '../../firebase/firebase-utils';
 
 import InputMaterialize from '../InputMaterialize/';
@@ -31,7 +31,6 @@ function SignIn() {
     const { name, value } = event.target;
 
     if (name === 'email-signin') setEmail(value);
-
     if (name === 'password-signin') setPassword(value);
   };
 

@@ -12,7 +12,7 @@ function CollectionItem({ item }) {
   const dispatchItem = () => dispatch(addItem(item));
 
   return (
-    <Container>
+    <Container key={id}>
       <Image image={imageUrl}>
         <button onClick={dispatchItem}>ADD TO CART</button>
       </Image>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { auth, createUserProfileDocument } from './firebase/firebase-utils';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,43 +10,48 @@ import GlobalStyle from './styles/global';
 
 function App() {
   const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.user);
+  const [userId, setUserId] = useState('');
 
-  const authUser = async () => {
-    await auth.onAuthStateChanged(async (authUser) => {
-      if (authUser) {
-        const userRef = await createUserProfileDocument(authUser);
+  const user = useMemo(() => currentUser, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
 
-        userRef.onSnapshot((snapShot) => {
-          dispatch({
-            type: 'SET_CURRENT_USER',
-            payload: {
-              user: {
-                id: snapShot.id,
-                ...snapShot.data(),
-              },
-            },
-          });
-        });
-      }
-
-      dispatch({ type: 'SET_CURRENT_USER', authUser });
-    });
-  };
-
+  //function like componentdidmount and componentwillunmount
   useEffect(() => {
-    authUser();
+    let hasUser = async () => {
+      await auth.onAuthStateChanged(async (authUser) => {
+        if (authUser) {
+          const userRef = await createUserProfileDocument(authUser);
+
+          return userRef.onSnapshot((snapShot) => {
+            dispatch({
+              type: 'SET_CURRENT_USER',
+              payload: {
+                user: {
+                  id: snapShot.id,
+                  ...snapShot.data(),
+                },
+              },
+            });
+
+            setUserId(snapShot.id);
+          });
+        }
+
+        dispatch({ type: 'SET_CURRENT_USER', authUser });
+      });
+    };
+
+    hasUser();
 
     return () => {
-      authUser();
+      hasUser = null;
     };
-  }, []);
-
-  const { currentUser } = useSelector((state) => state.user);
+  }, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
       <GlobalStyle />
-      <Routes currentUser={currentUser} />
+      <Routes currentUser={user} />
     </>
   );
 }

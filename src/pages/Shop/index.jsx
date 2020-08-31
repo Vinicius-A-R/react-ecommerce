@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import SHOP_DATA from './shop-data';
 
@@ -7,7 +7,7 @@ import { Container } from './styles';
 import PreviewCollection from '../../components/PreviewCollection/';
 
 function Shop() {
-  const [collections, setCollections] = useState(SHOP_DATA);
+  const collections = SHOP_DATA;
 
   return (
     <Container>

@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 // import { addItem } from '../../../redux/cart/cart-actions';
 
 import Button from '../../Button/';

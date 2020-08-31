@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
-
 import HomePage from './pages/HomePage/';
 import Shop from './pages/Shop/';
 import Sign from './pages/Sign/';

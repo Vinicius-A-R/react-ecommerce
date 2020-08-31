@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase-utils';
 
@@ -11,6 +11,8 @@ import { Container, Item } from './styles';
 
 function Header() {
   const { currentUser } = useSelector((state) => state.user);
+
+  const hasUser = useMemo(() => (currentUser ? true : false), [currentUser]);
 
   return (
     <>
@@ -26,7 +28,7 @@ function Header() {
             <Link to="/contact">CONTACT</Link>
           </Item>
 
-          {currentUser ? (
+          {hasUser ? (
             <Item onClick={() => auth.signOut()}>
               <Link to="/">SIGN OUT</Link>
             </Item>
