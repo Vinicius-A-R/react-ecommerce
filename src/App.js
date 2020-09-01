@@ -6,14 +6,12 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Routes from './routes';
 
-import GlobalStyle from './styles/global';
-
 function App() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const [userId, setUserId] = useState('');
 
-  const user = useMemo(() => currentUser, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
+  const user = useMemo(() => currentUser, [userId]);
 
   //function like componentdidmount and componentwillunmount
   useEffect(() => {
@@ -42,15 +40,10 @@ function App() {
     };
 
     hasUser();
-
-    return () => {
-      hasUser = null;
-    };
   }, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
-      <GlobalStyle />
       <Routes currentUser={user} />
     </>
   );

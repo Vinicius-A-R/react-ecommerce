@@ -27,7 +27,7 @@ export const Image = styled.div`
     height: 48px;
     margin-bottom: 24px;
     font-weight: 400;
-    border: 0;
+    border: 1px solid #000;
     background-color: #fff;
 
     opacity: 0.7;

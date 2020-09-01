@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from './pages/HomePage/';
 import Shop from './pages/Shop/';
 import Sign from './pages/Sign/';
+import Checkout from './pages/Checkout/';
 
 import Header from './components/Header/';
 
@@ -18,6 +19,12 @@ function routes({ currentUser }) {
           exact
           path="/signin"
           render={() => (currentUser ? <Redirect to="/" /> : <Sign />)}
+        />
+        <Route
+          exact
+          path="/checkout"
+          component={Checkout}
+          currentUser={currentUser}
         />
       </Switch>
     </BrowserRouter>

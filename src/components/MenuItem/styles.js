@@ -47,6 +47,7 @@ export const Shop = styled.div.attrs()`
 
   opacity: 0.7;
   background-color: #fff;
+  border: 1px solid #222;
 
   & span {
     font-weight: 700;

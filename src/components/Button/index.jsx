@@ -8,6 +8,7 @@ function Button({
   colorButton,
   signIn,
   isGoogleSignIn,
+  clickEvent,
 }) {
   return (
     <>
@@ -20,7 +21,7 @@ function Button({
           {labelButton}
         </ButtonStyle>
       ) : (
-        <ButtonStyle type={typeButton} color={colorButton}>
+        <ButtonStyle type={typeButton} color={colorButton} onClick={clickEvent}>
           {labelButton}
         </ButtonStyle>
       )}

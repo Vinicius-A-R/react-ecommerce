@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid !important;
   grid-template-columns: 1fr;
-  grid-template-rows: 90% 10%;
+  grid-template-rows: 85% auto;
 
   position: absolute;
   width: 248px;
@@ -23,10 +23,12 @@ export const Container = styled.div`
 export const Items = styled.div`
   display: grid !important;
   grid-template-columns: 1fr;
-  grid-template-rows: max-content;
+  grid-auto-rows: 80px;
   grid-row-gap: 12px;
 
-  max-height: 95%;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 12px;
   overflow-y: scroll;
 
   &::-webkit-scrollbar-track {
@@ -45,4 +47,16 @@ export const Items = styled.div`
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #222;
   }
+`;
+
+export const Empty = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  font-size: 32px;
+  font-weight: 700;
 `;

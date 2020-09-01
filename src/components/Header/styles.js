@@ -10,7 +10,7 @@ export const Container = styled.header`
 
   width: 100%;
   max-width: 1260px;
-  height: 72px;
+  height: 64px;
   margin: 0 auto;
   padding: 0 16px;
 
@@ -23,6 +23,7 @@ export const Container = styled.header`
   div {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 `;
 
@@ -31,8 +32,9 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 64px;
-  padding: 8px 4px;
+  width: 72px;
+  height: 40px;
+  padding: 0px 8px;
 
   cursor: pointer;
 

@@ -9,13 +9,12 @@ export default createGlobalStyle`
 }
 
 html, body, #root {
+  width: 100%;
+  height: 100%;
+  
   font-family: 'Open Sans Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body{
-  width: 100%;
 }
 
 button{
