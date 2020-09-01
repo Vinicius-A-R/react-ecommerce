@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 100%;
+`;
 
 export const Form = styled.form`
   width: 100%;
   max-width: 500px;
 
   padding: 16px;
+  margin: 0 auto;
+
   border: 1px solid #222;
 `;
 
