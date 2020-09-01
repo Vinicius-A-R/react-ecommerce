@@ -4,11 +4,17 @@
 
 React JS Web Application using React Hooks, Redux and Firebase to sign or sign up in this application web.
 
-![app react-countries](https://github.com/V-Coyote/react-ecommerce/blob/master/public/ecommerce-1.png?raw=true)
+## Homepage
 
-![app react-countries](https://github.com/V-Coyote/react-ecommerce/blob/master/public/ecommerce-2.png?raw=true)
+  ![app e-commerce](https://github.com/V-Coyote/react-ecommerce/blob/master/public/ecommerce-1.png?raw=true)
 
-![app react-countries](https://github.com/V-Coyote/react-ecommerce/blob/master/public/ecommerce-3.png?raw=true)
+## Shop page
+
+  ![app e-commerce](https://github.com/V-Coyote/react-ecommerce/blob/master/public/ecommerce-2.png?raw=true)
+
+## Sign in and Sign up page
+  
+  ![app e-commerce](https://github.com/V-Coyote/react-ecommerce/blob/master/public/ecommerce-3.png?raw=true)
 
 ## How to start
 
