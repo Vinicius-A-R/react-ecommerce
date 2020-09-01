@@ -4,7 +4,7 @@ import CollectionItem from '../CollectionItem/';
 
 import { Container, Grid } from './styles';
 
-function PreviewCollection({ title, routeName, items }) {
+function PreviewCollection({ title, items }) {
   return (
     <>
       <Container>

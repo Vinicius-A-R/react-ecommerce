@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import Table from '../../components/Table/';
+import CheckoutItems from '../../components/CheckoutItems/';
 
 import { Container } from './styles';
 
@@ -16,7 +16,7 @@ function Checkout() {
     <>
       <Container>
         {cartItems.length ? (
-          <Table tableHead={tableHead} cartItems={cart} />
+          <CheckoutItems tableHead={tableHead} cartItems={cart} />
         ) : (
           <Redirect to="/shop" />
         )}

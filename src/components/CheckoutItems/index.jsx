@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Container, TableBox, Header, Body, Footer } from './styles';
 
-function Table({ tableHead, cartItems }) {
+function CheckoutItems({ tableHead, cartItems }) {
   const [total, setTotal] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let totalValue = cartItems.reduce((acc, currentValue) => {
@@ -12,6 +14,10 @@ function Table({ tableHead, cartItems }) {
 
     setTotal(totalValue);
   }, [cartItems]);
+
+  const handleRemove = (id) => {
+    dispatch({ type: 'CLEAR_ITEM_FROM_CART', payload: id });
+  };
 
   return (
     <Container>
@@ -33,8 +39,9 @@ function Table({ tableHead, cartItems }) {
                 <td>{name}</td>
                 <td>{quantity}</td>
                 <td>${price}</td>
-                <td>
+                <td onClick={() => handleRemove(id)}>
                   <span>&#10005;</span>
+                  {/* <span>&#10060;</span> */}
                 </td>
               </tr>
             );
@@ -50,4 +57,4 @@ function Table({ tableHead, cartItems }) {
   );
 }
 
-export default Table;
+export default CheckoutItems;
