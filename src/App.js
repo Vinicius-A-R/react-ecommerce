@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { auth, createUserProfileDocument } from './firebase/firebase-utils';
 
 import { useSelector, useDispatch } from 'react-redux';
-// import { setCurrentUser } from './redux/user/user-actions';
 
 import Routes from './routes';
 
@@ -11,7 +10,7 @@ function App() {
   const { currentUser } = useSelector((state) => state.user);
   const [userId, setUserId] = useState('');
 
-  const user = useMemo(() => currentUser, [userId]);
+  const user = useMemo(() => currentUser, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   //function like componentdidmount and componentwillunmount
   useEffect(() => {

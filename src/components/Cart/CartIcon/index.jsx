@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ReactComponent as ShoppingIcon } from '../../../assets/shopping-bag.svg';
 
-import { toggleCartHidden } from '../../../redux/cart/cart-actions';
+// import { toggleCartHidden } from '../../../redux/cart/cart-actions';
 // import { selectCartItems } from '../../../redux/cart/cart-selectors';
 // import { selectCartItemsCount } from '../../../redux/cart/cart-selectors';
 
@@ -18,7 +18,8 @@ export default function CartIcon() {
   };
 
   const totalItems = useMemo(() => totalItemsCount(cartItems), [cartItems]);
-  const dispatchCartHidden = () => dispatch(toggleCartHidden());
+  // const dispatchCartHidden = () => dispatch(toggleCartHidden());
+  const dispatchCartHidden = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
 
   return (
     <>
