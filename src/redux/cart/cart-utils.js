@@ -13,3 +13,15 @@ export const addItemsToCart = (cartItems, cartItemToAdd) => {
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+export const decreaseQuantityItem = (cartItem, id) => {
+  return cartItem.quantity > 1
+    ? { ...cartItem, quantity: --cartItem.quantity }
+    : cartItem;
+};
+
+export const increaseQuantityItem = (cartItem) => {
+  return cartItem.quantity > 0
+    ? { ...cartItem, quantity: ++cartItem.quantity }
+    : cartItem;
+};

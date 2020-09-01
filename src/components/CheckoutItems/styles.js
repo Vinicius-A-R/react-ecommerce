@@ -45,14 +45,16 @@ export const Body = styled.tbody`
       height: 96px;
     }
 
-    span {
-      width: 100%;
-      height: 100%;
-      font-size: 24px;
-      border: 0;
-      background-color: #fff;
+    td {
+      span {
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        border: 0;
+        background-color: #fff;
 
-      cursor: pointer;
+        cursor: pointer;
+      }
     }
   }
 `;

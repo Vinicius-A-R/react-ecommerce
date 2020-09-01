@@ -37,7 +37,23 @@ function CheckoutItems({ tableHead, cartItems }) {
                   <img src={imageUrl} alt={name} />
                 </td>
                 <td>{name}</td>
-                <td>{quantity}</td>
+                <td>
+                  <span
+                    onClick={() =>
+                      dispatch({ type: 'DECREASE_ITEM_FROM_CART', payload: id })
+                    }
+                  >
+                    &#x276E;
+                  </span>
+                  &nbsp; {quantity} &nbsp;
+                  <span
+                    onClick={() =>
+                      dispatch({ type: 'INCREASE_ITEM_FROM_CART', payload: id })
+                    }
+                  >
+                    &#x276F;
+                  </span>
+                </td>
                 <td>${price}</td>
                 <td onClick={() => handleRemove(id)}>
                   <span>&#10005;</span>
