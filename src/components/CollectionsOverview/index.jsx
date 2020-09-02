@@ -1,10 +1,10 @@
 import React from 'react';
 
-import CollectionItem from '../CollectionItem/';
+import CollectionItem from './CollectionItem/';
 
 import { Container, Grid } from './styles';
 
-function PreviewCollection({ title, items }) {
+function CollectionsOverview({ title, items }) {
   return (
     <>
       <Container>
@@ -21,4 +21,4 @@ function PreviewCollection({ title, items }) {
   );
 }
 
-export default PreviewCollection;
+export default CollectionsOverview;

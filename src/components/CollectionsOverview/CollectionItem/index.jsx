@@ -2,14 +2,13 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Container, Image, Footer } from './styles';
-import { addItem } from '../../redux/cart/cart-actions';
 
 function CollectionItem({ item }) {
   const { id, name, price, imageUrl } = item;
 
   const dispatch = useDispatch();
 
-  const dispatchItem = () => dispatch(addItem(item));
+  const dispatchItem = () => dispatch({ type: 'ADD_ITEM', payload: item });
 
   return (
     <Container key={id}>
