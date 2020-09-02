@@ -1,13 +1,12 @@
 import React from 'react';
-
-import SHOP_DATA from './shop-data';
+import { useSelector } from 'react-redux';
 
 import { Container } from './styles';
 
 import PreviewCollection from '../../components/PreviewCollection/';
 
 function Shop() {
-  const collections = SHOP_DATA;
+  const { collections } = useSelector((state) => state.shop);
 
   return (
     <Container>
