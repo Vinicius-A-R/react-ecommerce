@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid !important;
   grid-template-columns: 1fr;
-  grid-template-rows: 85% auto;
+  grid-template-rows: 88% auto;
 
   position: absolute;
-  width: 248px;
-  height: 340px;
+  width: 264px;
+  height: 360px;
   margin-right: 24px;
+  padding: 8px;
 
-  padding: 16px;
   border: 1px solid #222;
   background-color: #fff;
 
@@ -27,8 +27,8 @@ export const Items = styled.div`
   grid-row-gap: 12px;
 
   width: 100%;
-  height: 100%;
-  margin-bottom: 12px;
+  height: 95%;
+  padding: 8px;
   overflow-y: scroll;
 
   &::-webkit-scrollbar-track {

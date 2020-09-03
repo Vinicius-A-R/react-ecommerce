@@ -11,6 +11,27 @@ export const Container = styled.div`
   }
 `;
 
+export const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 32px;
+
+  h3 {
+    margin-right: 16px;
+  }
+
+  a {
+    position: relative;
+    top: 12px;
+    font-size: 12px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+`;
+
 export const Grid = styled.div`
   display: grid;
   grid-gap: 12px;

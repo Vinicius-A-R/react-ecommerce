@@ -22,6 +22,9 @@ function Header() {
         </Link>
         <div>
           <Item>
+            <Link to="/">HOME</Link>
+          </Item>
+          <Item>
             <Link to="/shop">SHOP</Link>
           </Item>
           <Item>

@@ -5,7 +5,6 @@ import { Container, Image, Footer } from './styles';
 
 function CollectionItem({ item }) {
   const { id, name, price, imageUrl } = item;
-
   const dispatch = useDispatch();
 
   const dispatchItem = () => dispatch({ type: 'ADD_ITEM', payload: item });
