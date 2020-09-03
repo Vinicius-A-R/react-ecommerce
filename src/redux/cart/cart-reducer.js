@@ -1,4 +1,3 @@
-// import CartActionTypes from './cart-types';
 import {
   addItemsToCart,
   decreaseQuantityItem,
