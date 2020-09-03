@@ -11,7 +11,6 @@ function CollectionsOverview({ match }) {
 
   const collectionKeys = Object.keys(collections);
 
-  console.log('col', collections);
   return (
     <Container>
       <h1>Collections</h1>
