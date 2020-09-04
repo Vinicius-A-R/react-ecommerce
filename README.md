@@ -8,12 +8,15 @@ React JS Web Application using React Hooks, Redux and Firebase to sign or sign u
 - [x] Homepage
 - [x] Shop page
 - [x] Page for each item on the Homepage
-- [ ] Contact
-- [x] Sign in and Sign out
+- [ ] Contact Page
+- [x] Sign in with email
+- [x] Sign in with google
+- [x] Sign out with email
 - [ ] My account page
 - [ ] Payment
 
-**Single Page Application :** https://react-ecommerce-123clothes.herokuapp.com/ 
+
+**Single Page Application :** https://react-clothes-ecommerce.web.app/ 
 
 ## Homepage
 
