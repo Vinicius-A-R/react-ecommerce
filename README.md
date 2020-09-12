@@ -13,7 +13,7 @@ React JS Web Application using React Hooks, Redux and Firebase to sign or sign u
 - [x] Sign in with google
 - [x] Sign out with email
 - [ ] My account page
-- [ ] Payment
+- [x] Payment
 
 
 **Single Page Application :** https://react-clothes-ecommerce.web.app/ 
