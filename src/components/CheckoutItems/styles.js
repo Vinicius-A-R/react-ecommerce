@@ -61,7 +61,8 @@ export const Body = styled.tbody`
 
 export const Footer = styled.tfoot`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 
   width: 100%;
   height: 40px;
@@ -69,4 +70,13 @@ export const Footer = styled.tfoot`
   padding-right: 16px;
 
   font-size: 32px;
+
+  p {
+    color: red;
+    justify-content: center;
+
+    &:first-child {
+      margin-top: 64px;
+    }
+  }
 `;

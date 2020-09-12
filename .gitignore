@@ -8,6 +8,13 @@
 # testing
 /coverage
 
+#my
+/src/components/Stripe/STRIPE_KEY.js
+
+.firebase
+.firebaserc
+firebase.json
+
 # production
 /build
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
+import StripeButton from '../Stripe/Button/';
+
 import { Container, TableBox, Header, Body, Footer } from './styles';
 
 function CheckoutItems({ tableHead, cartItems }) {
@@ -66,6 +68,21 @@ function CheckoutItems({ tableHead, cartItems }) {
         <Footer>
           <tr>
             <td>TOTAL: &nbsp; $ {total}</td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                This is not a REAL E-Commerce, only one site for educational
+                purposes!
+              </p>
+              <p>*Please use the following test credit card for payments*</p>
+              <p>*4242 4242 4242 4242 --- Exp: Any future date ---CVC: 123*</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <StripeButton price={total} />
+            </td>
           </tr>
         </Footer>
       </TableBox>
