@@ -16,7 +16,7 @@ React JS Web Application using React Hooks, Redux and Firebase to sign or sign u
 - [x] Payment
 
 
-**Single Page Application :** https://react-clothes-ecommerce.web.app/ 
+**Web site:** https://react-clothes-ecommerce.web.app/ 
 
 ## Homepage
 
