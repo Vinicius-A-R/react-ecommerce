@@ -6,10 +6,12 @@ import CollectionItem from './CollectionItem/';
 
 import { Container, Header, Grid } from './styles';
 
-function CollectionsOverview({ match }) {
+function CollectionsOverview() {
   const { collections } = useSelector((state) => state.shop);
 
   const collectionKeys = Object.keys(collections);
+
+  console.log('KEYS', collectionKeys);
 
   return (
     <Container>

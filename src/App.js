@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import {
   auth,
+  firestore,
   createUserProfileDocument,
   // addCollectionsAndDocuments,
+  convertCollectionsSnapshotToMap,
 } from './firebase/firebase-utils';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,6 +17,7 @@ function App() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const [userId, setUserId] = useState('');
+
   // const { collections } = useSelector((state) => state.shop);
 
   const user = useMemo(() => currentUser, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -48,9 +51,9 @@ function App() {
     hasUser();
   }, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  //ADD SHOP DATA TO FIREBASE
-  /* useEffect(() => {
-    const collectionKeys = Object.keys(SHOP_DATA);
+  /*  //ADD SHOP DATA TO FIREBASE
+  useEffect(() => {
+    const collectionKeys = Object.keys(collections);
 
     addCollectionsAndDocuments(
       'collections',
@@ -61,6 +64,16 @@ function App() {
       })
     );
   }, []); // eslint-disable-line react-hooks/exhaustive-deps */
+
+  useEffect(() => {
+    const collectionRef = firestore.collection('collections');
+
+    collectionRef.onSnapshot(async (snapShot) => {
+      const collectionsMap = await convertCollectionsSnapshotToMap(snapShot);
+
+      dispatch({ type: 'UPDATE_COLLECTIONS', payload: collectionsMap });
+    });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
