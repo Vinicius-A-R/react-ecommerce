@@ -11,7 +11,7 @@ function Directory() {
 
   return (
     <Container>
-      {true ? (
+      {sections ? (
         <GridOrder>
           {sections.map(({ id, ...otherProps }) => (
             <MenuItem key={id} {...otherProps} />

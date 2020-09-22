@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -9,9 +9,7 @@ import { Container, Header, Grid } from './styles';
 function CollectionsOverview() {
   const { collections } = useSelector((state) => state.shop);
 
-  const collectionKeys = Object.keys(collections);
-
-  console.log('KEYS', collectionKeys);
+  const collectionKeys = useMemo(() => Object.keys(collections), [collections]);
 
   return (
     <Container>

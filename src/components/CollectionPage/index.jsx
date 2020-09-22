@@ -1,5 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+import Spinner from '../Spinner';
 
 import { Container, Grid, Box, Details, Image } from './styles';
 
@@ -7,11 +9,21 @@ function CollectionPage({ match }) {
   const dispatch = useDispatch();
   const { collections } = useSelector((state) => state.shop);
 
-  const collection = useMemo(() => collections[match.params.categoryId], []); // eslint-disable-line react-hooks/exhaustive-deps
+  const [collection, setCollection] = useState(null);
+
+  useEffect(() => {
+    if (collections) {
+      setCollection(collections[match.params.categoryId]);
+    }
+
+    return () => {
+      setCollection(null);
+    };
+  }, [collections]);
 
   return (
     <Container>
-      {collection && (
+      {collection ? (
         <>
           <h1>{collection.title}</h1>
           <Grid>
@@ -40,6 +52,8 @@ function CollectionPage({ match }) {
             })}
           </Grid>
         </>
+      ) : (
+        <Spinner />
       )}
     </Container>
   );
