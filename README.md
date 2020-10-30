@@ -4,7 +4,7 @@
 
 React JS Web Application using React Hooks, Redux and Firebase to sign or sign up in this application web.
 
-- [ ] Responsive ( I really need to do this in the future )
+- [ ] Responsive
 - [x] Homepage
 - [x] Shop page
 - [x] Page for each item on the Homepage
